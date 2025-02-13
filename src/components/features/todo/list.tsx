@@ -23,7 +23,7 @@ const TodoList = () => {
     }, [data]);
 
     return (
-        <div ref={scrollContainerRef} className='flex flex-col p-2 gap-3 h-[400px] md:w-[500px] overflow-auto'>
+        <div ref={scrollContainerRef} className='flex flex-col p-2 gap-3 h-[400px] w-full xs:w-[500px] overflow-auto'>
             {data?.length === 0 && <Stub passage="Empty Todo List" />}
             {data?.map(todo => ( 
                 <TodoItem key={todo.id} {...todo} /> 
