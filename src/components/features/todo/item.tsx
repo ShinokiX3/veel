@@ -40,9 +40,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ ...props }) => {
         <div className={`flex justify-between p-3 rounded-md bg-primaryLight transition-all duration-300 ease-in-out
             ${animateDelete ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
         >
-            <div className='flex gap-3'>
+            <div className='flex gap-3 pr-1'>
                 <p className='font-bold'>{`User ${userId}`}</p>
-                <p className={`${completed && 'line-through'} italic`}>{title}</p>
+                <p className={`[word-break:break-word] ${completed ? 'line-through' : ''}`}>{title}</p>
             </div>
             <div className='flex gap-3'>
                 <Checkbox checked={completed} disabled={isPending} onChange={handleUpdateTodo} />
