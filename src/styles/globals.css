@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffe6eb;
+    --foreground: #373232;
+    --primary: #ff4da6;
+    --primary-light: #f796ba;
+    --primary-dark: #e60073;
+    --muted: #f0d1e3;
+    --muted-dark: #b2a1a1;
+}
+  
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #25111b;
+        --foreground: #ededed;
+        --primary: #ff4da6;
+        --primary-light: #820126;
+        --primary-dark: #ff3385;
+        --muted: #3e1d24;
+        --muted-dark: #7f6b6b;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-light);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--foreground);
+    border-radius: 4px;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+    /* Button */
+
+    .btn {
+        @apply
+        text-foreground font-bold
+    }
+    
+    .btn-filled {
+        @apply 
+        bg-primaryLight px-4 py-2 rounded
+        disabled:bg-muted disabled:cursor-not-allowed
+        hover:bg-pink-600 hover:scale-105 transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-pink-500;
+    }
+    
+    .btn-clear {
+        @apply 
+        bg-transparent rounded-full focus:outline-none 
+        focus-visible:ring-2 focus-visible:ring-pink-500;
+    }
+
+    /* Input */
+
+    .input {
+        @apply
+        bg-transparent text-foreground
+    }
+
+    .input-default {
+        @apply 
+        bg-primaryLight
+        border p-2 rounded w-full font-bold
+        disabled:bg-muted focus:ring-2 focus:ring-pink-400 
+        focus:outline-none transition-colors duration-300;
+    }
+
+    /* Checkbox */
+
+    .checkbox-filled {
+        @apply
+        w-6 h-6 rounded-md border-2 border-pink-400 peer-checked:border-pink-600 
+        flex items-center justify-center transition-all duration-300 bg-white 
+        peer-checked:bg-primaryLight peer-focus:ring-2 peer-focus:ring-pink-300
+        peer-disabled:bg-muted peer-disabled:peer-checked:bg-muted;
+    }
+}
