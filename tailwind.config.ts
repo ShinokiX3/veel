@@ -17,6 +17,9 @@ export default {
         muted: "var(--muted)",
         mutedDark: "var(--muted-dark)",
       },
+      screens: {
+        'xs': '580px',
+      },
     },
   },
   plugins: [],
